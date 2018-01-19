@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Android dimens 适配</title>
+    <link rel="stylesheet" href="/static/css/style.css" media="screen" type="text/css"/>
+</head>
+
+<body>
+<div class="container">
+    <form action="/dimens/" method="post" id="contact">
+        <br/>{% csrf_token %}<br/>
+        <h3>Dimens Adapter</h3>
+        <br/>
+        <fieldset>
+            <input name="density" placeholder="density" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+            <input name="scale_density" placeholder="scale density" type="text" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+            <input name="xdpi" placeholder="xdpi" type="text" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+            <textarea name="dimens_content" placeholder="这里粘贴 dimens.xml 文件的内容" tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Loading">Start</button>
+        </fieldset>
+        <fieldset>
+            <h4>输出内容：</h4>
+            <textarea placeholder="输出内容" >{{ data }}</textarea>
+        </fieldset>
+    </form>
+</div>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+
+</html>
